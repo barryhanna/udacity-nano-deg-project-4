@@ -7,7 +7,7 @@ This project is part of the Udacity Nano Degree for Front-end Development. It us
 
 This project has given me a chance to develop my skills in testing using Jasmine.
 
-## How to play
+## How to run
 
 Simply open the index.html. The results of the tests will be shown at the bottom of the page.
 
