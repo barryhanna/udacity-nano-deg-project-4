@@ -85,32 +85,48 @@ $(function() {
 
     })
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+    /* Initial Entries tests */
     describe("Initial Entries", function() {
-        /* TODO: Write a test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
-         */
 
          beforeEach(function(done) {
            loadFeed(0,done);
          });
 
+         // check that the feed has at least one 
+         // item after it is initially loaded.
          it("has at least one entry", function() {
-            const numFeedItems = document.querySelector(".entry").length;
-            expect(numFeedItems).not.toBe(0);
+            const feedEntryNum = document.querySelector(".entry").length;
+            expect(feedEntryNum).not.toBe(0);
          });
     });
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* A new test suite named "New Feed Selection" */
     describe("New Feed Selection", function() {
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
-         it("is loaded", function() {
 
+        let feedOne;
+        let feedTwo;
+
+        // load two different feeds and store the title of the first
+        // item of each.
+        beforeEach(function(done) {
+           loadFeed(0,function() {
+                // load the title of the first feed's entry item
+                feedOne = document.querySelector(".entry").children[0].firstChild.textContent;
+           });
+           loadFeed(allFeeds.length-1,function() {
+                // load the title of the last feed's entry item
+                feedTwo = document.querySelector(".entry").children[0].firstChild.textContent;
+                done(); 
+           });
+
+         });
+
+        /* A test that ensures when a new feed is loaded
+         * by the loadFeed function that the content actually changes.
+         */
+         it("is updating correctly when changed.", function() {
+            // check if there are two feeds to use.
+            expect(allFeeds.length > 1).toBe(true);
+            expect(feedOne).not.toEqual(feedTwo);
          });
      });
 }());
