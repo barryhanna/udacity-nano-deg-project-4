@@ -110,10 +110,12 @@ $(function() {
         beforeEach(function(done) {
            loadFeed(0,function() {
                 // load the title of the first feed's entry item
-                feedOne = document.querySelector(".entry").children[0].firstChild.textContent;
+                // feedOne = document.querySelector(".entry").children[0].firstChild.textContent;
+                feedOne = document.querySelector(".feed").innerHTML
                 loadFeed(allFeeds.length-1,function() {
                     // load the title of the last feed's entry item
-                    feedTwo = document.querySelector(".entry").children[0].firstChild.textContent;
+                    // feedTwo = document.querySelector(".entry").children[0].firstChild.textContent;
+                    feedTwo = document.querySelector(".feed").innerHTML;
                     done(); 
                 });
             });

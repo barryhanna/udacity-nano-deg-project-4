@@ -8,7 +8,9 @@ This project is part of the Udacity Nano Degree for Front-end Development. It us
 This project has given me a chance to develop my skills in testing using Jasmine.
 
 ## How to get the code
-Use the 'Clone or download' link to download a zip archive or clone the repository to your local machine. ```git clone https://github.com/barryhanna/udacity-nano-deg-project-4.git```
+Use the 'Clone or download' link to download a zip archive or clone the repository to your local machine. 
+
+```git clone https://github.com/barryhanna/udacity-nano-deg-project-4.git```
 
 ## How to run
 
