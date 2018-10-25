@@ -111,14 +111,13 @@ $(function() {
            loadFeed(0,function() {
                 // load the title of the first feed's entry item
                 feedOne = document.querySelector(".entry").children[0].firstChild.textContent;
-           });
-           loadFeed(allFeeds.length-1,function() {
-                // load the title of the last feed's entry item
-                feedTwo = document.querySelector(".entry").children[0].firstChild.textContent;
-                done(); 
-           });
-
-         });
+                loadFeed(allFeeds.length-1,function() {
+                    // load the title of the last feed's entry item
+                    feedTwo = document.querySelector(".entry").children[0].firstChild.textContent;
+                    done(); 
+                });
+            });
+        });
 
         /* A test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
