@@ -72,12 +72,12 @@ $(function() {
           */
         it("is shown/hidden when menu icon is clicked.", function() {
             const menuIcon = document.querySelector(".menu-icon-link");
-            menuIcon.dispatchEvent(new Event("click"));
+            menuIcon.click();
             let menuIsHidden = document.querySelector("body").classList.contains("menu-hidden");
             // the menu should not be hidden after the
             // menu icon has been clicked.
             expect(menuIsHidden).not.toBe(true);
-            menuIcon.dispatchEvent(new Event("click"));
+            menuIcon.click();
             // now see if the menu has been hidden
             menuIsHidden = document.querySelector("body").classList.contains("menu-hidden");
             expect(menuIsHidden).toBe(true);
@@ -95,7 +95,7 @@ $(function() {
          // check that the feed has at least one 
          // item after it is initially loaded.
          it("has at least one entry", function() {
-            const feedEntryNum = document.querySelector(".entry").length;
+            const feedEntryNum = document.querySelectorAll(".feed .entry").length;
             expect(feedEntryNum).not.toBe(0);
          });
     });
